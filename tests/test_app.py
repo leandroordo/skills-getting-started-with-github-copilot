@@ -131,7 +131,7 @@ def test_unregister_returns_404_for_unknown_activity(client):
 
     # Act
     response = client.delete(
-        f"/activities/{activity_name}/participants", params={"email": email}
+        f"/activities/{activity_path(activity_name)}/participants", params={"email": email}
     )
 
     # Assert
