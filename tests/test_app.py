@@ -100,7 +100,7 @@ def test_unregister_removes_student_from_activity(client):
 
     # Act
     response = client.delete(
-        f"/activities/{activity_name}/participants", params={"email": email}
+        f"/activities/{activity_path(activity_name)}/participants", params={"email": email}
     )
 
     # Assert
