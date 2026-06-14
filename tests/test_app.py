@@ -1,9 +1,14 @@
 from copy import deepcopy
+from urllib.parse import quote
 
 import pytest
 from fastapi.testclient import TestClient
 
 from src.app import activities, app
+
+
+def activity_path(activity_name: str) -> str:
+    return quote(activity_name, safe="")
 
 INITIAL_ACTIVITIES = deepcopy(activities)
 
