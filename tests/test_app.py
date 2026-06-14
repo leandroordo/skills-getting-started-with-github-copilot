@@ -116,7 +116,7 @@ def test_unregister_returns_404_when_student_not_signed_up(client):
 
     # Act
     response = client.delete(
-        f"/activities/{activity_name}/participants", params={"email": email}
+        f"/activities/{activity_path(activity_name)}/participants", params={"email": email}
     )
 
     # Assert
