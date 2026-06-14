@@ -73,7 +73,7 @@ def test_signup_returns_400_when_student_already_signed_up(client):
     email = activities[activity_name]["participants"][0]
 
     # Act
-    response = client.post(f"/activities/{activity_name}/signup", params={"email": email})
+    response = client.post(f"/activities/{activity_path(activity_name)}/signup", params={"email": email})
 
     # Assert
     assert response.status_code == 400
